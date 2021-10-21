@@ -96,7 +96,7 @@
               </button>
             </div>
 
-            <div class="flex justify-center">
+            <!-- <div class="flex justify-center">
               <button
                 class="
                   mt-2
@@ -112,7 +112,7 @@
               >
                 Reset Arena
               </button>
-            </div>
+            </div> -->
             <p class="text-sm text-center mt-8 -mb-6 font-bold text-gray-600">
               v1.0
             </p>
@@ -145,7 +145,14 @@ export default {
   methods: {
     nextRound() {
       this.roundCount += 1
-      this.energyCount += 2
+
+      if (this.energyCount < 10) {
+        this.energyCount += 2
+      }
+
+      if (this.energyCount === 11) {
+        this.energyCount -= 1
+      }
     },
     newArena() {
       this.roundCount = 1
