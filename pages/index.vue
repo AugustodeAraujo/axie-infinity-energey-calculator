@@ -153,7 +153,9 @@ export default {
       this.energyCount = 3
     },
     increaseEnergy() {
-      this.energyCount += 1
+      if (this.energyCount < 10) {
+        this.energyCount += 1
+      }
     },
     decreaseEnery() {
       if (this.energyCount > 0) {
